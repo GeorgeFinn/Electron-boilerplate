@@ -19,7 +19,7 @@ router.post('/create', (req, res) => {
       errors.name = 'Style already exists'
       return res.status(400).json(errors)
     } else {
-      const newStyle = new Style({ name: req.body.name, category: req.body.category, type: req.body.type })
+      const newStyle = new Style({ name: req.body.name, category: req.body.category, type: req.body.type, attributes: req.body.attributes})
       newStyle.save().then(style => res.json(style)).catch(err => console.log(err))
     }})
 })

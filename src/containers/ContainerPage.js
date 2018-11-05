@@ -27,7 +27,6 @@ class ContainerPage extends Component {
     tree.wrapper.attributes.forEach(attribute => {
       wrapperStyle[attribute.name] = attribute.value.toString()
     })
-    console.log("3", wrapperStyle)
     return (<div key={i} style={wrapperStyle}>Hello</div>)
   }
 
@@ -36,7 +35,6 @@ class ContainerPage extends Component {
     componentTree.wrapper.attributes.forEach(attribute => {
       wrapperStyle[attribute.name] = attribute.value.toString()
     })
-    console.log("2", wrapperStyle)
     return (<div style={wrapperStyle}>
       {componentTree.components.map((comp, i) => {
         return this.renderComponentChild(comp, i)
