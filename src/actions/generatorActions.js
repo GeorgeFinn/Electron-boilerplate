@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GET_CONTAINERS, GET_COMPONENTS, GET_STYLES, GET_ERRORS } from './types'
+import { GET_CONTAINERS, GET_COMPONENTS, GET_STYLES, GET_ERRORS, CREATE_STYLE, CREATE_COMPONENT } from './types'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 export const getContainers = () => dispatch => {
@@ -47,5 +47,22 @@ export const getStyles = () => dispatch => {
       })
       dispatch(hideLoading())
     })
-
 }
+
+export const createComponent = data => dispatch => {
+  axios
+    .post('http://localhost:8080/api/components/create', data)
+    .catch(err => dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data
+    }))
+};
+
+export const createStyle = data => dispatch => {
+  axios
+    .post('http://localhost:8080/api/styles/create', data)
+    .catch(err => dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data
+    }))
+};

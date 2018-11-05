@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { HomeContainer } from '../styles/containers.styles'
+import { ContainerPageContainer, MainContentWrapper } from '../styles/containers.styles'
 import { connect } from 'react-redux'
+
+import TopBarMenu from '../components/TopBarMenu'
 import { getContainers, getComponents, getStyles } from '../actions/generatorActions'
 
 
@@ -44,13 +46,18 @@ class ContainerPage extends Component {
 
   renderComponents() {
     const containerTree = this.generateComponentTree(this.props.containers[0])
-    console.log("containerTree",containerTree)
     return this.renderComponentTree(containerTree)
   }
   render() {
-    return this.props.styles.length && this.props.components.length && this.props.containers.length ? this.renderComponents() : (
-      <span>Loading Tree...</span>
-    )
+    return(
+    <ContainerPageContainer>
+      <TopBarMenu />
+      <MainContentWrapper>
+        {this.props.styles.length && this.props.components.length && this.props.containers.length
+          ? this.renderComponents()
+          : (<span>Loading Tree...</span>)}
+      </MainContentWrapper>
+    </ContainerPageContainer>)
   }
 }
 
