@@ -1,4 +1,4 @@
-import { GET_CONTAINERS, GET_COMPONENTS, GET_STYLES, CREATE_STYLE, CREATE_COMPONENT } from '../actions/types'
+import { GET_CONTAINERS, GET_COMPONENTS, GET_STYLES } from '../actions/types'
 
 const initialState = {
   containers: {},
@@ -26,16 +26,6 @@ export default function(state = initialState, action) {
       return {
         ...state,
         styles: action.payload,
-      }
-    case CREATE_STYLE:
-      return {
-        ...state,
-        styles: action.payload,
-      }
-    case CREATE_COMPONENT:
-      return {
-        ...state,
-        components: action.payload,
       }
     default:
       return state;

@@ -2,5 +2,3 @@ export const GET_ERRORS = "GET_ERRORS";
 export const GET_CONTAINERS = "GET_CONTAINERS";
 export const GET_COMPONENTS = "GET_COMPONENTS";
 export const GET_STYLES = "GET_STYLES";
-export const CREATE_STYLE = "CREATE_STYLE"
-export const CREATE_COMPONENT = "CREATE_COMPONENT"

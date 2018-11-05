@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GET_CONTAINERS, GET_COMPONENTS, GET_STYLES, GET_ERRORS, CREATE_STYLE, CREATE_COMPONENT } from './types'
+import { GET_CONTAINERS, GET_COMPONENTS, GET_STYLES, GET_ERRORS } from './types'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 export const getContainers = () => dispatch => {

@@ -39,7 +39,6 @@ class TopBarMenu extends Component {
       <TopBarMenuWrapper>
         <TopBarMenuButtonList>
           <TopBarMenuButton onClick={this.addGrid}>Grid</TopBarMenuButton>
-          <TopBarMenuButton>Button 1</TopBarMenuButton>
         </TopBarMenuButtonList>
       </TopBarMenuWrapper>
     );
