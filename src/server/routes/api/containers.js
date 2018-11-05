@@ -49,7 +49,7 @@ router.post('/edit', (req, res) => {
   if(typeof req.body.children !== 'undefined') { //SPLIT the array
     contFields.children = req.body.children.split(',')
   }
-
+  if(req.body.wrapper) contFields.wrapper = req.body.wrapper
   Container.findOneAndUpdate({ _id: req.body._id }, { $set: contFields }, { new: true })
     .then(cont => res.json(cont))
     .catch(err => res.status(404).json(err))
